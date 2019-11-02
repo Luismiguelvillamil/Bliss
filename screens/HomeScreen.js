@@ -30,44 +30,40 @@ export default function HomeScreen() {
         <View style={styles.welcomeContainer}>
           <Image
             source={
+              
               __DEV__
-                ? require('../assets/images/robot-dev.png')
+                // ? require('../assets/images/robot-dev.png')
+                ? require('../assets/images/Logo.png')
                 : require('../assets/images/robot-prod.png')
             }
             style={styles.welcomeImage}
           />
         </View>
         <View style={styles.profileContainer}>
-          <Text style={styles.name}>Juan Pablo</Text>
+          <Text style={{fontSize: 36, color:'white'}}>Juan Pablo</Text>
           <Image source={require('../assets/images/jp.jpg')}
             style={styles.profileImage}
           />
+          <Text style={{color:'white'}}>I am passionate about the ocean!</Text>
         </View>
         <View style={styles.chart}>
           <LineChart
             data={{
-              labels: ["January", "February", "March", "April", "May", "June"],
+              labels: ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul."],
               datasets: [
                 {
-                  data: [
-                    Math.random() * 100,
-                    Math.random() * 100,
-                    Math.random() * 100,
-                    Math.random() * 100,
-                    Math.random() * 100,
-                    Math.random() * 100
-                  ]
+                  data: [100, 150, 360, 600, 900, 1200, 2700]
                 }
               ]
             }}
             width={Dimensions.get("window").width - 50} // from react-native
             height={220}
-            yAxisLabel={"$"}
+            // yAxisLabel={"$"}
             chartConfig={{
               backgroundColor: "#e26a00",
               backgroundGradientFrom: "#3aded6",
               backgroundGradientTo: "#ffa726",
-              decimalPlaces: 2, // optional, defaults to 2dp
+              decimalPlaces: 0, // optional, defaults to 2dp
               color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               style: {
