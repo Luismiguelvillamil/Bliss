@@ -29,9 +29,7 @@ HomeStack.navigationOptions = {
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+        'md-leaf'
       }
     />
   ),
@@ -82,7 +80,7 @@ const CommunityStack = createStackNavigator(
 CommunityStack.navigationOptions = {
   tabBarLabel: 'Community',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={'pin-drop'} />
+    <TabBarIcon focused={focused} name={'md-map'} />
   ),
   headerTransparent: true,
 };
@@ -93,8 +91,8 @@ CommunityStack.path = '';
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
-  SettingsStack,
   CommunityStack,
+  SettingsStack,
   },
   {
     tabBarOptions: {
