@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import CommunityScreen from '../screens/CommunityScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen',
@@ -28,9 +29,7 @@ HomeStack.navigationOptions = {
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+        'md-leaf'
       }
     />
   ),
@@ -71,9 +70,28 @@ SettingsStack.navigationOptions = {
 
 SettingsStack.path = '';
 
+const CommunityStack = createStackNavigator(
+  {
+    Community: CommunityScreen,
+  },
+  config
+);
+
+CommunityStack.navigationOptions = {
+  tabBarLabel: 'Community',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={'md-map'} />
+  ),
+  headerTransparent: true,
+};
+
+CommunityStack.path = '';
+
+
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
+  CommunityStack,
   SettingsStack,
   },
   {
