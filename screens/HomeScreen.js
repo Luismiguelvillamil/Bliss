@@ -29,12 +29,7 @@ export default function HomeScreen() {
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
           <Image
-            source={
-              __DEV__
-                // ? require('../assets/images/robot-dev.png')
-                ? require('../assets/images/Logo.png')
-                : require('../assets/images/robot-prod.png')
-            }
+            source = {require('../assets/images/Logo.png')}
             style={styles.welcomeImage}
           />
         </View>
@@ -57,7 +52,6 @@ export default function HomeScreen() {
             }}
             width={Dimensions.get("window").width - 50} // from react-native
             height={220}
-            // yAxisLabel={"$"}
             chartConfig={{
               backgroundColor: "#e26a00",
               backgroundGradientFrom: "#3aded6",
@@ -82,16 +76,10 @@ export default function HomeScreen() {
           />
         </View>
         <View style={styles.getStartedContainer}>
-          <Text style={styles.getStartedText}>Get started by opening</Text>
-
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
             <MonoText>screens/HomeScreen.js</MonoText>
           </View>
-
-          <Text style={styles.getStartedText}>
-            Yo this is wild
-          </Text>
         </View>
 
         <View style={styles.helpContainer}>

@@ -19,7 +19,8 @@ export default function LinksScreen() {
     <View style={styles.container}>
       <Text>Hello World!</Text>
       <MapView
-        initialRegion = {
+        // initialRegion = {
+        region = {
           {latitude: 37.78825,
           longitude: -122.4324,
           latitudeDelta: 0.922,

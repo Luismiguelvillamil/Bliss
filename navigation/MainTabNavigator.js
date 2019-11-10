@@ -37,21 +37,21 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
-  {
-    Links: LinksScreen,
-  },
-  config
-);
+// const LinksStack = createStackNavigator(
+//   {
+//     Links: LinksScreen,
+//   },
+//   config
+// );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Community',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-  ),
-};
+// LinksStack.navigationOptions = {
+//   tabBarLabel: 'Community',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+//   ),
+// };
 
-LinksStack.path = '';
+// LinksStack.path = '';
 
 const SettingsStack = createStackNavigator(
   {
@@ -82,7 +82,7 @@ CommunityStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={'md-map'} />
   ),
-  headerTransparent: true,
+  // headerTransparent: true,
 };
 
 CommunityStack.path = '';
@@ -90,7 +90,7 @@ CommunityStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  // LinksStack,
   CommunityStack,
   SettingsStack,
   },
