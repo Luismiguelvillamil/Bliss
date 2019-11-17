@@ -7,6 +7,7 @@ import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import { ActionButton } from '../components/ActionButton';
 import { CurrentLocationButton } from '../components/CurrentLocationButton';
+import Events from '../components/Events';
 
 export default class CommunityScreen extends React.Component{
   constructor(props) {
@@ -28,8 +29,8 @@ export default class CommunityScreen extends React.Component{
     let region = {
       latitude: location.coords.latitude,
       longitude: location.coords.longitude,
-      latitudeDelta: 0.3,
-      longitudeDelta: 0.3,
+      latitudeDelta: 0.03,
+      longitudeDelta: 0.03,
     }
     this.setState({region: region})
   }
@@ -45,22 +46,27 @@ export default class CommunityScreen extends React.Component{
     return(
       <View style={styles.container}>
         <ActionButton/>
-        {/* <CurrentLocationButton cb={() => {this.centerMap()}}/> */}
-        <CurrentLocationButton />
+        <CurrentLocationButton cb={() => {this.centerMap()}}/>
         <MapView
           initialRegion = {this.state.region}
           showsUserLocation={true}
           showsCompass={true}
           rotateEnabled={false}
-          // ref={(map) => {this.map = map}}
-          style={{flex: 1, zIndex: 0}}/>
+          ref={(map) => {this.map = map}}
+          style={{flex: 1, zIndex: 0}}>
+          <Events event={{uid: 'null',location:{
+            latitude: 37.78825,
+            longitude: -122.4324,
+          }}}/>
+          </MapView>
       </View>
     );
   }
 }
 
 CommunityScreen.navigationOptions = {
-  title: 'Community',
+  // title: 'Community',
+  header: null,
 };
 
 const styles = StyleSheet.create({
