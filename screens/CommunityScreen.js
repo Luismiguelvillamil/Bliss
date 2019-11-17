@@ -54,6 +54,7 @@ export default class CommunityScreen extends React.Component{
           rotateEnabled={false}
           ref={(map) => {this.map = map}}
           style={{flex: 1, zIndex: 0}}>
+
           <Events event={{uid: 'null',location:{
             latitude: 37.78825,
             longitude: -122.4324,
