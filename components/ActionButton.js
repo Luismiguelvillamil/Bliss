@@ -55,6 +55,6 @@ const styles = StyleSheet.create({
     rightCol: {
         flex: 1,
         borderLeftWidth: 1,
-        borderColor: '#ededed',
+        borderColor: 'black',
     },
 })

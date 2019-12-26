@@ -4,6 +4,20 @@ import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import firebase, { app } from 'firebase';
+
+var config = require('./config');
+
+const firebaseConfig = {
+   apiKey: config.firebase.apiKey,
+   authDomain: config.firebase.authDomain,
+   databaseURL: config.firebase.databaseURL,
+   projectId: config.firebase.projectId,
+   storageBucket: config.firebase.storageBucket,
+   messagingSenderId: config.firebase.messagingSenderId,
+ } 
+
+firebase.initializeApp(firebaseConfig);
 
 import AppNavigator from './navigation/AppNavigator';
 
